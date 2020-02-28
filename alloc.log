@@ -1,0 +1,8 @@
+   • Initialization            package=gramework version=1.7.0-rc3
+   • node info                 cputicks=2.60G package=gramework ram=5.93G used / 16.00G total swap=0.00 used / 0.00 total
+   • load average is good      fifteen=5.002 five=5.901 one=7.964 package=gramework
+   • node uptime               package=gramework uptime= 0:52
+TotalAlloc: 98
+Alloc: 85
+HeapAlloc: 85
+HeapSys: 105
