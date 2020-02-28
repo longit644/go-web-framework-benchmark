@@ -237,6 +237,11 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	r.Header.Get("X-Header-3")
 	r.Header.Get("X-Header-4")
 	r.Header.Get("X-Header-5")
+	r.Header.Get("X-Header-6")
+	r.Header.Get("X-Header-7")
+	r.Header.Get("X-Header-8")
+	r.Header.Get("X-Header-9")
+	r.Header.Get("X-Header-10")
 	w.Write(message)
 }
 func startDefaultMux() {
@@ -539,6 +544,11 @@ func fiberHandler(ctx *fiber.Ctx) {
 	ctx.Get("X-Header-3")
 	ctx.Get("X-Header-4")
 	ctx.Get("X-Header-5")
+	ctx.Get("X-Header-6")
+	ctx.Get("X-Header-7")
+	ctx.Get("X-Header-8")
+	ctx.Get("X-Header-9")
+	ctx.Get("X-Header-10")
 	ctx.SendString(messageStr)
 }
 
