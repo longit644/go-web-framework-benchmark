@@ -21,7 +21,7 @@ test_web_framework()
   echo "testing web framework: $2"
   ./$server_bin_name $2 $3 > alloc.log 2>&1 &
   sleep 2
-  wrk -t$cpu_cores -c$4 -d30s http://127.0.0.1:8080/hello > tmp.log
+  wrk -t$cpu_cores -c$4 -d30s -H 'X-Header-1: X-Value-asdsadasdasd' -H 'X-Header-2: X-Value-asdsadasdasd' -H 'X-Header-3: X-Value-asdsadasdasd' -H 'X-Header-4: X-Value-asdsadasdasd' -H 'X-Header-5: X-Value-asdsadasdasd' http://127.0.0.1:8080/hello > tmp.log
   throughput=`cat tmp.log|grep Requests/sec|awk '{print $2}'`
   latency=`cat tmp.log|grep Latency | awk '{print $2}'`
   latency=${latency%ms}

@@ -19,8 +19,8 @@ import (
 	"github.com/dinever/golf"
 	restful "github.com/emicklei/go-restful"
 	fasthttpSlashRouter "github.com/fasthttp/router"
-	"github.com/gofiber/fiber"
 	"github.com/gin-gonic/gin"
+	"github.com/gofiber/fiber"
 	"github.com/gramework/gramework"
 	"github.com/kataras/muxie"
 	"github.com/savsgio/atreugo/v10"
@@ -232,6 +232,11 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 			runtime.Gosched()
 		}
 	}
+	r.Header.Get("X-Header-1")
+	r.Header.Get("X-Header-2")
+	r.Header.Get("X-Header-3")
+	r.Header.Get("X-Header-4")
+	r.Header.Get("X-Header-5")
 	w.Write(message)
 }
 func startDefaultMux() {
@@ -529,6 +534,11 @@ func fiberHandler(ctx *fiber.Ctx) {
 			runtime.Gosched()
 		}
 	}
+	ctx.Get("X-Header-1")
+	ctx.Get("X-Header-2")
+	ctx.Get("X-Header-3")
+	ctx.Get("X-Header-4")
+	ctx.Get("X-Header-5")
 	ctx.SendString(messageStr)
 }
 
